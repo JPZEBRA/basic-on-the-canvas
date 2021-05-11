@@ -1,5 +1,5 @@
 /* HUGE NUMBER CALCULATOR 2 */
-/* by K-ARAI Version 0.08   */
+/* by K-ARAI Version 0.10   */
 
 /* EXPAND */
 var EX = 1;
@@ -39,9 +39,9 @@ var bKAN = false;
 
 function main () {
 
-    RESIZE (1280,400*EX);
+    RESIZE (1280,400*EX+20);
     CSIZE(24,0,0);
-    CMAP(73,5*EX+6);
+    CMAP(73,5*EX+7);
 
     SOUND_INIT();
 
@@ -712,11 +712,11 @@ function disp_big(V,CAP,TOP) {
 
     if(over) return disp_exp(V,CAP,TOP);
 
-    var small = V.valid_size() - V.zero_pos() -1;
+    var small = V.valid_size() - V.zero_pos() - 1;
 
-    var line = Math.floor( ( V.size() + 9 )/ 10 ) - Math.floor( ( small +9 ) / 10 ) + 1;
+    if(small<0) small = 0;
 
-    if(line<=0) line = 1;
+    var line = Math.floor( ( V.size() + 9 )/ 10 ) - Math.floor( ( small + 9 ) / 10 ) +1 ;
 
     for(i=0; i<line*10; i++) {
         var n = line*10 - i -1;
