@@ -11,6 +11,8 @@ var R;
 var I;
 var F;
 
+var K;
+
 /* BIG DIGIT PI */
 var PI;
 
@@ -67,6 +69,10 @@ function init() {
 
     I = new FloatedBigDigit();
     F = new FloatedBigDigit();
+
+    K = new FloatedBigDigit();
+    K.set(10);
+    K.power(72);
 
     PI = new FloatedBigDigit();
 
@@ -837,6 +843,11 @@ function disp_kan(V,CAP,TOP) {
     D.Copy(V);
 
     D.Abs();
+
+    if(D.Compare(K)>=0) {
+        PRINTX(3,TOP+3," 超 過 表 示 ");
+        return;
+    }
 
     var x = 28;
     var y = 5;
