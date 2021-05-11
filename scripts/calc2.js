@@ -1,5 +1,5 @@
 /* HUGE NUMBER CALCULATOR 2 */
-/* by K-ARAI Version 0.10   */
+/* by K-ARAI Version 0.1.3  */
 
 /* EXPAND */
 var EX = 1;
@@ -790,6 +790,12 @@ function disp_exp(V,CAP,TOP) {
     A.Copy(V);
 
     var order = A.order();
+
+    if( order> 9999 || order < -9999 ) {
+        PRINTX(3,TOP+3,"OVER FLOW !");
+        return;
+    }
+
 
     while(A.digit(0)>=10) {
         A.div(10);
