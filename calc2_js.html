@@ -1,0 +1,112 @@
+﻿<!DOCTYPE html>
+
+<html lang="ja">
+
+<head>
+<meta charset="utf-8">
+<title>Huge Number Calculator Ver.2 </title>
+<script type="text/javascript" src="./lib/graphics_lib.js"></script>
+<script type="text/javascript" src="./lib/sounds_lib.js"></script>
+<script type="text/javascript" src="./lib/FloatedBigDigit.js"></script>
+<script type="text/javascript" src="./scripts/calc2.js"></script>
+<link rel="stylesheet" type="text/css" href="./css/basic.css">
+</head>
+
+<body>
+
+
+<div width="100%" class="mid">
+
+<p>Huge Number Calculator Ver.2  @ BASIC on JavaScript ( Version 0.0280 )</p>
+
+<canvas id="canvas01" width = "640" height = "480">HTML5 : canvas</canvas>
+
+<br/>
+
+<form>
+
+<fieldset class="input_base">
+
+<legend>数式入力</legend>
+
+<span class="input_set">
+<label name="input_labels">*</label>
+<textarea id="line" name="input_values" rows="5" cols="100"></textarea>
+</span>
+
+<br/>
+
+<input name="clear" type="reset" value="消去" />
+<input name="sound" type="button" value="ＳＥ" onclick="sound_switch();" />
+<input name="line" type="button" value="複写" onclick="copy_result();" />
+<input name="speed1" type="button" value="最速" onclick="SPEED(0);" />
+<input name="speed2" type="button" value="微速" onclick="SPEED(1.0);" />
+<input name="sound" type="button" value="漢" onclick="disp_kanji();" />
+<input id="input_button" name="exec" type="button" value="---"/>
+
+</fieldset>
+
+<input type="hidden" name="sound-extension" value="./sounds/snd_ans.wav" />
+<input type="hidden" name="sound-extension" value="./sounds/snd_pan.wav" />
+<input type="hidden" name="sound-extension" value="./sounds/snd_call.wav" />
+<input type="hidden" name="sound-extension" value="./sounds/snd_in.wav" />
+<input type="hidden" name="sound-extension" value="./sounds/snd_err.wav" />
+
+</form>
+
+<hr>
+
+<p class="txt3">使える演算子</p>
+
+<br/>
+算術： + - * / % ^ = <br/>
+<br/>
+特算： D P C <br/>
+<br/>
+メモリ： MC MR M+ M- M* M/ M% M^ <br/>
+<br/>
+定数： PI E <br/>
+乱数： RND <br/>
+<br/>
+整数： FI FF <br/>
+特殊： FR FD <br/>
+符号： FABS FSIG <br/>
+三角： FS FC FT FAS FAC FAT <br/>
+双曲： FSH FCH FTH FASH FACH FATH <br/>
+指数： FEX <br/>
+対数： FLN FLG FL2 <br/>
+方根： FSQR F2R F3R F4R F5R F6R F7R F8R F9R <br/>
+種々： F! F!! FREV <br/>
+<br/>
+
+<hr/>
+
+<p class="txt3">入力の例</p>
+
+<br/>
+例１： 1 / 1.3 * 1.3 FR = <br/>
+<br/>
+例２： MC 30 FC ^2 M+ 30 FS ^2 M+ MR FR = <br/>
+<br/>
+例３： MC 1 M+ 1 F! FREV M+ 2 F! FREV M+ 3 F! FREV M+ 4 F! FREV M+ 5 F! FREV M+ 6 F! FREV M+ MR FR = <br/>
+<br/>
+例４： MC RND *6 FF +1  M+ RND *6 FF +1 M+ MR = <br/>
+<br/>
+例５： 10 D 6  = <br/>
+<br/>
+例６： MC 100 F!! M+ 101 F!! M* 101 F! M- MR =<br/>
+<br/>
+<hr/>
+<br/>
+<p class="txt3" >
+巨大な桁数の演算を行える計算機です。<br/>
+標準的な「関数電卓」の機能全部込み！<br/>
+また、組み込みの<a href="./lib/FloatedBigDigit.js">浮動小数点巨大数クラス</a>(テスト中)は<br/>
+単独にてユーザー環境で使用できます。<br/>
+</p>
+<hr/>
+</div>
+
+</body>
+
+</html>
