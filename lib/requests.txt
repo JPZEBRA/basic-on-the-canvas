@@ -3,7 +3,7 @@ REQUESTS FOR YOU.
 I WANT YOU TO READ BELOW IN JAPANESE LANGUAGE.
 
 １－１.私が私のものとして守りたいもの。
-「CanvasにBASICの命令で絵を描く環境 (BASIC OF THE CANVAS)」の
+「CanvasにBASICの命令で絵を描く環境 (BASIC ON THE CANVAS)」の
 「コンセプトの発案者であること」「最初の実装者であること」「当面のコード管理者であること」
 
 １－２．私が責任を負わないこと。
