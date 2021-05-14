@@ -1,5 +1,5 @@
 /* HUGE NUMBER CALCULATOR 2 */
-/* by K-ARAI Version 0.1.3  */
+/* by K-ARAI Version 0.1.5  */
 
 /* EXPAND */
 var EX = 1;
@@ -10,6 +10,7 @@ var R;
 
 var I;
 var F;
+var IE;
 
 var K;
 
@@ -69,6 +70,7 @@ function init() {
 
     I = new FloatedBigDigit();
     F = new FloatedBigDigit();
+    IE = new FloatedBigDigit();
 
     K = new FloatedBigDigit();
     K.set(10);
@@ -479,10 +481,18 @@ function to_next(str) {
 
 function parse_numeric(str) {
 
-    var valid = "1234567890";
+    var valid = "0123456789";
+    var ip = ".";
+    var ie = "e";
+
     var next = " +-*/%^=DPCFM";
+
     var idx = 0;
+
     var ns = "";
+    var ve;
+    var pe;
+
     var pc = 0;
     var dm = 0;
 
@@ -526,9 +536,11 @@ function parse_numeric(str) {
         var a = str[idx];
         if(valid.indexOf(a)>=0) {
             ns = ns + a;
-        } else if(a==".") {
+        } else if(a==ip) {
             ns = ns + a;
             ++pc;
+        } else if(a==ie) {
+            break;
         } else if(next.indexOf(a)>=0){
             --idx;
              break;
@@ -539,16 +551,59 @@ function parse_numeric(str) {
         ++idx; 
     }
 
-    if(dm>0)alert("right ???");
+    if(dm>0) alert("right ???");
+
+    IE.set(1);
+    pe = +1;
+    ve = 0;
+
+
+    if(a==ie) {
+       ++idx;
+        if(str[idx]=="-") {
+            pe = -1;
+            ++idx;
+        } else if(str[idx]=="+") {
+            pe = +1;
+            ++idx;
+        }       
+        while(idx<str.length) {
+            var a = str[idx];
+            var i = valid.indexOf(a);
+            if(i>=0) {
+                ve = ve*10 + i;
+                ++idx;
+            } else {
+                --idx;
+                break;
+            }
+        }
+        ve = pe*ve;
+        if(ve >  9999) {
+            ve = 9999;
+            alert("right ???");
+        }
+        if(ve < -9999) {
+            ve = -9999;
+            alert("right ???");
+        }
+        IE.set(10);
+        IE.power(ve);
+    }
+
+
+    if(dm>0) alert("right ???");
 
     if(ns!="") {
         if( pc == 0 ) setInt(ns);
         if( pc == 1 ) setSmall(ns);
         if( pc > 1   ) {
             alert("right ???");
-            setInt(ns.substr(0,ns.indexOf(".")));
+            setInt(ns.substr(0,ns.indexOf(ip)));
         }
     }
+
+    if(ve!=0) I.Mul(IE);
 
     return str.substr(idx+1);
 
