@@ -1,5 +1,5 @@
 /* HUGE NUMBER CALCULATOR 2 */
-/* by K-ARAI Version 0.1.5  */
+/* by K-ARAI Version 0.8.4  */
 
 /* EXPAND */
 var EX = 1;
@@ -312,6 +312,9 @@ function disp_kanji() {
 
 function calc(C) {
 
+    var ret = 0;
+
+
     if(C=="R") R.Copy(I);
 
     if(C=="+") R.Add(I);
@@ -321,9 +324,14 @@ function calc(C) {
     if(C=="%") R.Mod(I);
     if(C=="^") R.Power(I);
 
-    if(C=="D") R.Dice(R,I);
-    if(C=="P") R.SetSequence(R,I);
-    if(C=="C") R.SetCombination(R,I);
+    if(C=="D") ret = R.Dice(R,I);
+    if(C=="P") ret = R.SetSequence(R,I);
+    if(C=="C") ret = R.SetCombination(R,I);
+
+    if(ret == floatedBigDigitERR) {
+        F_ERR = true;
+        if(sound) SOUND_PLAY(5);
+    }
 
 }
 
