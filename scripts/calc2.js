@@ -777,9 +777,7 @@ function disp_big(V,CAP,TOP) {
         return;
     }
 
-    var over = (V.zero_pos() >= V.size());
-
-    if(over) return disp_exp(V,CAP,TOP);
+    if(V.isExp()) return disp_exp(V,CAP,TOP);
 
     var small = V.valid_size() - V.zero_pos() - 1;
 
@@ -822,7 +820,7 @@ function disp_small(V,CAP,TOP) {
 
     if(F_ERR) PRINTX(30,TOP+2," F-ERROR !!! ");
 
-    if(V.isBig()) {
+    if(V.isOver()|| V.isBig()) {
         PRINTX(3,TOP+3,"OVER FLOW !");
         return;
     }
@@ -853,6 +851,11 @@ function disp_exp(V,CAP,TOP) {
     if(!M.isZero()) PRINTX(20,TOP+2," MEMORY ");
 
     if(F_ERR) PRINTX(30,TOP+2," F-ERROR !!! ");
+
+    if(V.isOver()) {
+        PRINTX(3,TOP+3,"OVER FLOW !");
+        return;
+    }
 
     var A = new FloatedBigDigit();
 
