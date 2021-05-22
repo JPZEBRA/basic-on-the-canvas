@@ -1,5 +1,5 @@
 /* HUGE NUMBER CALCULATOR 2 */
-/* by K-ARAI Version 0.8.6  */
+/* by K-ARAI Version 0.9.0  */
 
 /* EXPAND */
 var EX = 1;
@@ -868,11 +868,6 @@ function disp_exp(V,CAP,TOP) {
         ++ order;
     }
 
-    if( order> 9999 || order < -10000 ) {
-        PRINTX(3,TOP+3,"OVER FLOW !");
-        return;
-    }
-
     PRINTX(3,TOP+3,pad(A.digit(0),false)+ ".");
 
     PRINTX(2,TOP+4,"E" + order);
@@ -881,7 +876,7 @@ function disp_exp(V,CAP,TOP) {
         var n = i - 1;
         var x = n % 10;
         var y = floor(n/10);
-       PRINTX(10 + x*6,TOP+3+y,pad(A.digit(i),true));
+        PRINTX(10 + x*6,TOP+3+y,pad(A.digit(i),true));
     }
 
 }
