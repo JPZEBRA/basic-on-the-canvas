@@ -2,6 +2,10 @@ REQUESTS FOR YOU.
 
 I WANT YOU TO READ BELOW IN JAPANESE LANGUAGE.
 
+１－０．Copyright (C) 2021 JPZEBRA with MIT License
+著作権の扱いはMITライセンスとします。
+以下は開発者としての「要望」です。
+
 １－１.私が私のものとして守りたいもの。
 「CanvasにBASICの命令で絵を描く環境 (BASIC ON THE CANVAS)」の
 「コンセプトの発案者であること」「最初の実装者であること」「当面のコード管理者であること」
@@ -33,9 +37,9 @@ I WANT YOU TO READ BELOW IN JAPANESE LANGUAGE.
 ３－１．管轄
 何か重大な問題があった場合は日本国の然るべき機関に持ち込みます。
 
-[第３版]
+[第４版]
 記す：Ｋ－ＡＲＡＩ
-日時：2021.02.18
+日時：2021.05.23
 
 http://www13.plala.or.jp/beni/basic/
 
