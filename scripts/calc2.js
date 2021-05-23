@@ -777,7 +777,7 @@ function disp_big(V,CAP,TOP) {
         return;
     }
 
-    if(V.isExp()) return disp_exp(V,CAP,TOP);
+    if(V.order()>=250) return disp_exp(V,CAP,TOP);
 
     var small = V.valid_size() - V.zero_pos() - 1;
 
