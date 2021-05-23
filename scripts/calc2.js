@@ -1,5 +1,5 @@
 /* HUGE NUMBER CALCULATOR 2 */
-/* by K-ARAI Version 0.9.0  */
+/* by K-ARAI Version 0.9  */
 
 /* EXPAND */
 var EX = 1;
@@ -777,7 +777,7 @@ function disp_big(V,CAP,TOP) {
         return;
     }
 
-    if(V.order()>=250) return disp_exp(V,CAP,TOP);
+    if(V.order()>=250*EX) return disp_exp(V,CAP,TOP);
 
     var small = V.valid_size() - V.zero_pos() - 1;
 
