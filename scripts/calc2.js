@@ -1,5 +1,5 @@
 /* HUGE NUMBER CALCULATOR 2 */
-/* by K-ARAI Version 0.9  */
+/* by K-ARAI Version 0.9.1  */
 
 /* EXPAND */
 var EX = 1;
@@ -529,6 +529,14 @@ function parse_numeric(str) {
         }
 
         return str.substr(1);
+
+    }
+
+    if(str.indexOf("BG")==0) {
+
+        ret = I.SetFull();
+
+        return str.substr(2);
 
     }
 
