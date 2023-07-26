@@ -82,6 +82,9 @@ PAINT(x,y,border)
 座標(x,y)から境界となるborder(0-7)の内部を塗りつぶします。
 ※とりあえず動く…ぞ…
 
+MOUSEX
+MOUSEY
+マウスが押されている座標
 
 ********** CONTROL COMMANDS **********
 
