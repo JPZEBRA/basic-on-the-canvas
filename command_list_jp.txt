@@ -82,9 +82,16 @@ PAINT(x,y,border)
 座標(x,y)から境界となるborder(0-7)の内部を塗りつぶします。
 ※とりあえず動く…ぞ…
 
+
+MOUSEK
+推されているマウスのボタン ( MOUSE_L / MOUSE_M / MOUSE_R )
+
 MOUSEX
 MOUSEY
-マウスが押されている座標
+マウスの座標
+
+MOUSEW
+ホイール数値
 
 ********** CONTROL COMMANDS **********
 
@@ -96,8 +103,10 @@ SPEED(sec)
 
 CALL(func)
 SPEEDに従って指定した関数funcが呼ばれます。
+※描画は呼び出しの合間に更新されます。
 
-(描画は呼び出しの合間に更新されます。)
+ONMOUSE(func)
+マウスイベント時に関数funcが呼ばれます。
 
 END()
 描画終了を宣言します。(必須ではない)
